@@ -1,5 +1,6 @@
+package com.spartanengineer.datastructures;
 
-public class MyQueue<T> {
+public class MyStack<T> {
 	
 	private class Node<U> {
 		public U data;
@@ -12,12 +13,10 @@ public class MyQueue<T> {
 	}
 	
 	private Node<T> head;
-	private Node<T> last;
 	private int size;
 	
-	public MyQueue() {
+	public MyStack() {
 		head = null;
-		last = null;
 		size = 0;
 	}
 	
@@ -25,24 +24,11 @@ public class MyQueue<T> {
 		Node<T> newNode = new Node<T>(data);
 		if(head == null) {
 			head = newNode;
-			last = newNode;
 		} else {
-			last.next = newNode;
-			last = newNode;
+			newNode.next = head;
+			head = newNode;
 		}
 		size++;
-	}
-	
-	public T pop() {
-		if(head == null)
-			return null;
-		
-		T result = head.data;
-		head = head.next;
-		if(head == null)
-			last = null;
-		size--;
-		return result;
 	}
 	
 	public T peek() {
@@ -52,6 +38,16 @@ public class MyQueue<T> {
 		return head.data;
 	}
 	
+	public T pop() {
+		if(head == null)
+			return null;
+		
+		T result = head.data;
+		head = head.next;
+		size--;
+		return result;
+	}
+	
 	public int getSize() {
 		return size;
 	}
@@ -59,7 +55,6 @@ public class MyQueue<T> {
 	public void clear() {
 		if(head != null) {
 			head = null;
-			last = null;
 			size = 0;
 		}
 	}

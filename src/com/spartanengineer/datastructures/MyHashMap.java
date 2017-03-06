@@ -1,3 +1,5 @@
+package com.spartanengineer.datastructures;
+
 import java.util.*;
 
 public class MyHashMap<T, U> {

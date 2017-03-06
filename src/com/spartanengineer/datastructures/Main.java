@@ -1,5 +1,7 @@
-import java.util.*;
+package com.spartanengineer.datastructures;
 
+import java.util.*;
+import com.spartanengineer.datastructures.*;
 
 public class Main {
 
