@@ -14,9 +14,10 @@ The project can be built with gradle using the following command:
 gradle build
 ```
 
-The example Java code can be run by the following command (ran from the root directory of the project): 
+The example Java code can be run by the following command (ran from the root directory of the project after building): 
+
 ```sh
-java -cp "build/libs/DataStructureImplementations-1.0.jar" com.spartanengineer.datastructure.DataStructuresExample
+java -cp "build/libs/DataStructureImplementations-1.0.jar" com.spartanengineer.datastructures.DataStructuresExample
 ```
 
 The generated Java jar file is in: 'build/libs/DataStructureImplementations-1.0.jar'.
