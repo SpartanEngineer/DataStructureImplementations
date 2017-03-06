@@ -3,9 +3,19 @@ package com.spartanengineer.datastructures;
 import java.util.*;
 import com.spartanengineer.datastructures.*;
 
-public class Main {
+public class DataStructuresExample {
+
+	public static void printSpartanEngineerWebsite() {
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("http://www.spartanengineer.com");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------");
+	}
 
 	public static void main(String[] args) {
+
+		printSpartanEngineerWebsite();
 		
 		DynamicArray<Integer> dArray = new DynamicArray<Integer>();
 		for(int i = 1; i <= 25; i++)
@@ -145,6 +155,8 @@ public class Main {
 		for(int i = 300; i < 310; i++)
 			test2.add(i);
 		test2.stream().filter(i -> i >= 305).forEach(i -> System.out.println(i));
+
+		printSpartanEngineerWebsite();
 	}
 	
 	public static int getMax(int[] arr) {
