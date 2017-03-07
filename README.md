@@ -6,6 +6,10 @@
 
 Data Structure implementations in Java.  Includes: Queue, Stack, LinkedList, HashMap, DynamicArray.
 
+# Requires
+
+Java 1.8
+
 # Usage
 
 The project can be built with gradle using the following command:
@@ -14,12 +18,14 @@ The project can be built with gradle using the following command:
 gradle build
 ```
 
-The example Java code can be run by the following command (ran from the root directory of the project after building): 
+The gradle command can be replaced by ./gradlew (on Linux/Mac) or gradlew.bat (on Windows) if gradle is not installed on the system. (ie './gradlew build')
+
+The example Java code can be run by the following command: 
 
 ```sh
-java -cp "build/libs/DataStructureImplementations-1.0.jar" com.spartanengineer.datastructures.DataStructuresExample
+gradle runExample
 ```
 
-The generated Java jar file is in: 'build/libs/DataStructureImplementations-1.0.jar'.
+The generated Java jar file is in: 'build/libs'.
 
 # Visit http://spartanengineer.com/data-structures for the full data structures tutorial.
