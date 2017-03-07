@@ -22,3 +22,9 @@ jar {
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.10'
 }
+
+task runExample(type: JavaExec) {
+	dependsOn build
+	main = "com.spartanengineer.datastructures.DataStructuresExample"
+	classpath = files("build/libs/${project.name}-${version}.jar")
+}
