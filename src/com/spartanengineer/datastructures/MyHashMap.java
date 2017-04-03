@@ -108,6 +108,24 @@ public class MyHashMap<T, U> {
 		
 		return false;
 	}
+
+	public U get(T key) {
+		int index = getHashIndex(key);
+		if(index < 0 || index >= capacity) {
+			//this should never happen if we have a good hash function
+			return null;
+		}
+		
+		List<HashPair<T, U>> list = map.get(index);
+		if(list != null) {
+			for(HashPair<T, U> p : list) {
+				if(p.key.equals(key))
+					return p.value;
+			}
+		}
+		
+		return null;
+	}
 	
 	public U remove(T key) {
 		int index = getHashIndex(key);
