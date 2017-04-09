@@ -8,7 +8,8 @@ Data Structure implementations in Java.  Includes: Queue, Stack, LinkedList, Has
 
 # Requires
 
-Java 1.8
+* Linux, Windows, or Mac OS
+* Java 1.8
 
 # Usage
 
