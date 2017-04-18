@@ -157,9 +157,17 @@ public class DataStructuresExample {
 		test2.stream().filter(i -> i >= 305).forEach(i -> System.out.println(i));
 
 		MyBinarySearchTree<Integer> bst = new MyBinarySearchTree<Integer>();
+		for(int i = 4; i <= 10; i++)
+			bst.insert(i);
 		bst.insert(2);
 		bst.insert(1);
 		bst.insert(3);
+		System.out.println(bst.toString());
+		bst.remove(3);
+		System.out.println(bst.toString());
+		bst.remove(2);
+		System.out.println(bst.toString());
+		bst.remove(1);
 		System.out.println(bst.toString());
 
 		printSpartanEngineerWebsite();

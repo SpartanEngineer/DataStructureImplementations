@@ -29,18 +29,18 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
 	} else {
 		TreeNode<T> parentNode = rootNode;
 		while(true) {
-			if(data.compareTo(rootNode.data) <= 0) {
-				if(rootNode.left == null) {
-					rootNode.left = newNode;
+			if(data.compareTo(parentNode.data) <= 0) {
+				if(parentNode.left == null) {
+					parentNode.left = newNode;
 					break;
 				}
-				rootNode = rootNode.left;
+				parentNode = parentNode.left;
 			} else {
-				if(rootNode.right == null) {
-					rootNode.right = newNode;
+				if(parentNode.right == null) {
+					parentNode.right = newNode;
 					break;
 				}
-				rootNode = rootNode.right;
+				parentNode = parentNode.right;
 			}
 		}
 	}
@@ -95,8 +95,7 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
 	TreeNode<T> toDelete = rootNode;
 	while(toDelete != null) {
 		if(data.compareTo(toDelete.data) == 0) {
-			//TODO- add deleting here
-			// put rightmost node on the left --or-- leftmost node on the right into the position of the parent node
+			//this is where we remove the node
 			
 			Pair<TreeNode<T>, TreeNode<T>> pair = getMaxNodeAndParent(toDelete, toDelete.left);
 			TreeNode<T> toMove = null;
@@ -105,13 +104,21 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
 			if(pair != null) {
 				toMoveParent = pair.getKey();
 				toMove = pair.getValue();
+				if(toMoveParent.left == toMove)
+					toMoveParent.left = toMove.left;
+				else
+					toMoveParent.right = toMove.left;
 
 			} else {
 				pair = getMinNodeAndParent(toDelete, toDelete.right);
 				if(pair != null) {
 					toMoveParent = pair.getKey();
 					toMove = pair.getValue();
-				}
+					if(toMoveParent.left == toMove)
+						toMoveParent.left = toMove.right;
+					else
+						toMoveParent.right = toMove.right;
+					}
 			}
 
 			if(toMove != null) {
