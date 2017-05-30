@@ -169,6 +169,8 @@ public class DataStructuresExample {
 		System.out.println(bst.toString());
 		bst.remove(1);
 		System.out.println(bst.toString());
+		
+		new DijkstrasAlgoExample();
 
 		printSpartanEngineerWebsite();
 	}
@@ -186,19 +188,6 @@ public class DataStructuresExample {
 		}
 		
 		return max;
-	}
-	
-	public static int getSum(int[] arr) {
-		if(arr == null)
-			return 0;
-		
-		int size = arr.length;
-		int sum = 0;
-		
-		for(int i = 0; i < size; i++)
-			sum += arr[i];
-		
-		return sum;
 	}
 	
 	public static boolean contains(String[] arr, String s) {
