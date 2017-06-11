@@ -79,7 +79,6 @@ public class DijkstrasAlgoExample {
     private Map<Integer, Node<Integer>> graph = new HashMap<>();
     
     public DijkstrasAlgoExample() {
-        //TODO: create graph here
         Node<Integer> n0 = new Node<Integer>(0);
         Node<Integer> n1 = new Node<Integer>(1);
         Node<Integer> n2 = new Node<Integer>(2);
