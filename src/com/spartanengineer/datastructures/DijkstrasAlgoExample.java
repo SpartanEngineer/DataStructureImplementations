@@ -23,7 +23,7 @@ public class DijkstrasAlgoExample {
 		public Node(U data) {
             this.data = data;
             edges = new HashMap<Node<U>, Integer>();
-            setIndex(nodeIndex);
+            this.index = nodeIndex;
             nodeIndex += 1;
         }
 		
@@ -31,6 +31,7 @@ public class DijkstrasAlgoExample {
 			return data;
 		}
 
+        
 		public void setData(U data) {
 			this.data = data;
 		}
@@ -67,7 +68,7 @@ public class DijkstrasAlgoExample {
 		}
     }
     
-    // Used to allow our priority queue to prioritizes edge pairs correctly
+    // Used to allow our priority queue to order edge pairs correctly
     private class EdgePairComparator implements Comparator<Pair<Node<Integer>, Integer>> {
 		@Override
 		public int compare(Pair<Node<Integer>, Integer> o1, Pair<Node<Integer>, Integer> o2) {
